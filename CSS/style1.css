@@ -1,0 +1,84 @@
+*{
+    font-family: Cambria;
+    background-color: rgb(207, 255, 255);
+}
+h1{
+    color: #b92327;
+}
+#login{
+
+ background-color: #b92327;
+ color: #ffffff;
+ font-weight:200;
+border-color: rgb(0, 0, 0);
+border-width: 1px;
+}
+#signup{
+    background-color: #b92327;
+    color: #ffffff;
+    font-weight:200;
+   border-color: rgb(0, 0, 0);
+   border-width: 1px;
+   }
+   .up{
+    background-color: white;
+    color: green;
+    border-color: green;
+    border-width: 1px;
+
+   
+   }
+   .ans{
+    background-color: white;
+    color: rgb(47, 168, 255);
+    border-color: rgb(47, 168, 255);
+    border-width: 1px;
+   }
+   .follow{
+    font-style: italic;
+   }
+   p a{
+    color: purple;
+   }
+   p+h3{
+    text-decoration: underline;
+   }
+   input[type="text"]{
+    color: black;
+   
+   }
+   input[type="password"]{
+    color: black;
+  
+   }
+   input[type]{
+    background-color: rgb(214, 214, 214);
+   }
+   .up:hover{
+    background-color: rgb(211, 248, 154);
+   }
+   .up:active{
+    background-color: rgb(153, 255, 0);
+    color: darkgreen;
+    font-style: italic;
+   }
+   .ans:active{
+    background-color:#00bfff;
+    color: darkblue;
+    font-style: italic;
+   }
+   p:active{
+    color: rgb(0, 0, 255);
+    font-style: bolder;
+   }
+   input[type="radio"]:checked+label{
+    color:green;
+    font-weight: bolder;
+   }
+   button{
+    border-radius: 10%;
+   }
+   input{
+    border-radius: 10%;
+    border-width: 1px;
+   }

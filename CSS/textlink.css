@@ -1,0 +1,15 @@
+h1{
+    height: 50px;
+    text-align: center;
+    border: solid;
+    font-weight: bold;
+    text-decoration: black  double underline;
+}
+P{
+    text-align: justify;
+    line-height: 3.14;
+}
+a{
+    color: blue;
+    text-decoration:none;
+}
