@@ -1,0 +1,26 @@
+.card{
+     text-align: center;
+    margin: 5px;
+    display: inline-block;
+    background-color: rgb(221, 252, 242); 
+    box-shadow: 2px 4px 5px black;
+    height: 200px;
+    width: 200px;
+
+    transition: 1s;
+}
+.card:hover{
+    box-shadow: 4px 8px 10px black;
+}
+.data>a{
+text-decoration: underline;
+color: black;
+}
+.data>p{
+    font-style: italic;
+}
+img{
+    height:50%;
+    width: 50%;
+    border-radius: 20px;
+}
