@@ -1,0 +1,19 @@
+.box{
+    background-color:green;
+    height: 100px;width: 100px;
+    animation-name: Animationfont;
+    animation-duration: 6s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 3;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+@keyframes Animationfont{
+    to{
+        background-color: aqua;
+        margin-left: 50%;
+        font-style: italic;
+        rotate:180deg ;
+        width:200px ;
+    }
+}

@@ -1,19 +1,21 @@
-#container{
-    height: 200px;
-    width: 500px;
+
+#box{
+    height:400px;
+    width:400px;
+    border:2px aqua solid;
     margin: auto;
-    border: black solid;
+    border-radius: 15px;
     display: flex;
-    flex-direction:column;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-content: space-evenly;
-  
+    justify-content: space-evenly;
 }
-h1{
+.btn{
     text-align: center;
-    font-style: italic;
-}
-#container div{
-    height: 60px;
-    width: 150px;
+    font-size: 25px;
+    border:1px black solid;
+    height: 100px; width:100px;
+    border-radius:10px;
+    margin: 10px;
+    background-color: rgba(112, 112, 112);
 }

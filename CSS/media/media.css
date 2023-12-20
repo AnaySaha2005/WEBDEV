@@ -1,0 +1,27 @@
+div{
+    background-color: bisque;
+    height: 400PX;
+    width: 400px;
+    border: 2px solid black;
+}
+@media (min-width:700px){
+    div{
+        height: 200PX;
+    width: 200px;
+    background-color: aqua;
+    }
+}
+@media (max-width:400px){
+    div{
+        height: 200PX;
+    width: 200px;
+    background-color: rgb(111, 0, 255);
+    }
+}
+@media (orientation:landscape){
+    div{
+        height: 200PX;
+    width: 200px;
+    background-color: rgb(255, 0, 132);
+    }
+   }
