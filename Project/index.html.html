@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" href=".\assets\logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                   <div class="nav-option">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                   </div>
+                   <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                   </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                   <div class="lib-option">
+                    <img src=".\assets\library.png" alt="">
+                    <a href="#">Your Library</a>
+                   </div>
+                   <div class="icons">
+                    <a href="#"><i class="fa-solid fa-plus"></i></a>
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+                   </div>
+                </div>
+                <div class="lib-box">
+                    <p class="box-p1">Create your first playlist</p>
+                    <p class="box-p2">Its's easy we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+                <div class="lib-box">
+                    <p class="box-p1">Let's find some podcast to follow</p>
+                    <p class="box-p2">We'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcast</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="part1">
+                    <img src="./assets/backarrow.png" alt="">
+                <img src="./assets/frontarrow.png" alt="" class="hide">
+                </div>
+                <div class="part2">
+                    <button class="badge hide">Explore Premium</button>
+                    <button class="badge" id="install"><i class="fa-regular fa-circle-down"></i>Install App</button>
+                    <i class="fa-regular fa-user"></i></div> 
+            </div>
+
+                <h2>Recently Played</h2>
+                <div class="card-container">
+                   <div class="card">
+                    <img src="./assets/img0.jpg" alt="">
+                    <p class="card-title">Top 50</p>
+                    <p class="card-info">Your daily updates of all the most played tracks...</p>
+                   </div>
+                </div>
+
+                <h2>Dinner Grooves</h2>
+                <div class="card-container">
+                   <div class="card">
+                        <img src="./assets/img1.png" alt="">
+                        <p class="card-title">Dinner with Friends</p>
+                        <p class="card-info">For your people...</p>
+                   </div>
+                   <div class="card">
+                        <img src="./assets/img2.png" alt="">
+                        <p class="card-title">Dinner Jazz</p>
+                         <p class="card-info">Fresh minted songs to jazz..</p>
+                   </div>
+                   <div class="card">
+                         <img src="./assets/img3.png" alt="">
+                         <p class="card-title">Top 50</p>
+                         <p class="card-info">Pasify your gentle heart with our handpicked.</p>
+                   </div>
+                </div>
+                <h2>Charts</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="./assets/img4.png" alt="">
+                        <p class="card-title">Top 50 Indie</p>
+                        <p class="card-info">Indie hits to make you move!!</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/img0.jpg" alt="">
+                        <p class="card-title">Top 50</p>
+                        <p class="card-info">Your daily updates of all the most played tracks...</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/img5.png" alt="">
+                        <p class="card-title">Hot Hits</p>
+                        <p class="card-info">Songs from blockbuster movies..</p>
+                    </div>
+                 </div>
+                 <div class="footer">
+                    <div class="line"></div>
+                 </div>
+        </div>
+        <div class="music-player">
+            <div class="active-music">
+                <img src="./assets/active-music-img.png" alt="">
+                <div class="details">
+                    <p >
+                        <a href="#"><h4 style="margin: 0 10px 3px 0px;">Water Fountain</h4></a>
+                    <a href="#"><h4 style="font-weight: 100;font-size: small; margin-top: 2px;">Alec Benjamin</h4></a> 
+                </p>
+                </div>
+                <input type="checkbox" id="heart">
+                <label for="heart">
+                    <i id="heartempty" class="fa-regular fa-heart"></i>
+                    <i  id="heartfilled" class="fa-solid fa-heart"></i>
+                </label>
+            </div>
+            <div class="player">
+                <div class="player-controls">
+                    <img src="./assets/playyerimg1.png" alt="" class="player-icon">
+                    <img src="./assets/playerimg2.png" alt="" class="player-icon">
+                    <img src="./assets/playerimg3.png" alt="" class="player-icon">
+                    <img src="./assets/playerimg4.png" alt="" class="player-icon">
+                    <img src="./assets/playerimg5.png" alt="" class="player-icon">
+                </div>
+                <div class="play-back-bar">
+                    <span class="current-time">00:00</span>
+                    <input type="range" min="0" max="100" class="progress-bar" step="1">
+                    <span class="total-time">2:54</span>
+                </div>
+            </div>
+            <div class="more-options"></div>
+        </div>
+    </div>
+</body>
+</html>
