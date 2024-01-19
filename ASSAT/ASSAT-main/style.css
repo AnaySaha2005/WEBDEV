@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(bg-img.avif);
+    background-size: cover;
+    height: 100vh;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff64;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.user {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.user input {
+    display: none;
+}
+
+.user label {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background: #007bff;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.user input:checked + label {
+    background: #0056b3;
+}
+
+.user-s,
+.user-t {
+    display: none;
+}
+
+.user-s form,
+.user-t form {
+    margin-top: 20px;
+}
+
+.user-s form label,
+.user-t form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-s form input,
+.user-t form input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.user-s form button,
+.user-t form button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.user-s form button:hover,
+.user-t form button:hover {
+    background: #0056b3;
+}
+#login{
+    border-radius: 0.5rem;
+    background-color: green;
+}
