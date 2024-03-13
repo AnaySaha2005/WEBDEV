@@ -1,0 +1,46 @@
+*{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+body{
+    background-color: rgb(235, 255, 255);
+}
+.container{
+    width: 600px;
+}
+.pad{
+    display: flex;
+    width: 450px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 500px;
+}
+.red,.green,.yellow,.blue{
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    margin: 2px;
+    border: 1px solid black;
+    transition-duration: 0.1s;
+
+}
+.red{
+    border-top-left-radius: 500px;
+}
+.green{
+    border-top-right-radius: 500px;
+}
+.blue{
+    border-bottom-left-radius: 500px;
+}
+.yellow{
+    border-bottom-right-radius: 500px;
+}
+.flash{
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
+}
+.userflash{
+    box-shadow: 10px 10px 20px rgb(81, 18, 206);
+
+}
