@@ -1,4 +1,3 @@
-const random=require("./fruit")
-console.log(random.v1)
-console.log(random.v2)
-console.log(random.v3)
+import{ sum} from "./math.js"
+import { generate } from "random-words"
+console.log(generate())
