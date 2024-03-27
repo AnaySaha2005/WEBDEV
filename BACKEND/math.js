@@ -1,1 +1,4 @@
-module.exports={v1:123,v2:213,v3:321,v4:231}
+export const sum=(a,b)=>a+b;
+export const sub=(a,b)=>a-b;
+export const mult=(a,b)=>a*b;
+export const div=(a,b)=>a/b;
