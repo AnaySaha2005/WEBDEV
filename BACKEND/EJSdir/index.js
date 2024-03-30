@@ -6,11 +6,21 @@ const port=8080;
 app.listen(port,()=>{
     console.log("app is listening")
 })
+
+
 // app.use((req,res)=>{
 //     let diceval= Math.floor(Math.random()*6)+1 ;
 //     res.render("rolldice.ejs",{num:diceval})
 // })
-app.get("/ig/:username",(req,res)=>{
-let {username}=req.params;
-res.render("ig.ejs",{username})
+
+
+// app.get("/ig/:username",(req,res)=>{
+// let {username}=req.params;
+// res.render("ig.ejs",{username})
+// })
+
+
+app.use((req,res)=>{
+    let diceval= Math.floor(Math.random()*6)+1 ;
+    res.render("rolldice.ejs",{num:diceval})
 })
