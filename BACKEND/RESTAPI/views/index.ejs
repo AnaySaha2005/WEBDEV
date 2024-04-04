@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUORA</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Quora Posts</h2>
+     <% for(post of posts){ %>
+        <div class="post">
+            <h3 class="user">@<%=post.username %></h3>
+            <h4>
+                <%= post.content %>
+            </h4>
+        </div>
+        <% } %>
+            <h5 style="display: inline-block;">NEW USER?</h5>
+            <button id="new">Yes</button>
+       <script src="/app.js"></script>
+</body>
+</html>
