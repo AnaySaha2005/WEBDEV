@@ -8,24 +8,20 @@
 </head>
 <body>
     <h2>Quora Posts</h2>
-     <% for(post of posts){ %>
         <div class="post">
             <h3 class="user">@<%=post.username %></h3>
+            <h5> Post ID:<%=post.id %></h5>
             <h4>
                 <%= post.content %>
+                <button id="edit">Edit</button>
             </h4>
-           <%  let s="http://localhost:8080/posts/"+post.id %>
-        
-            <a href=<%=s%> style="text-decoration: none;">show more</a>
         </div>
-        <% } %>
-            <h5 style="display: inline-block;">NEW USER?</h5>
-            <button id="new">Yes</button>
        <script>
-         let btn1=document.querySelector("#new")
-         btn1.onclick=()=>{
-         location.href="http://localhost:8080/posts/new";
-         }
+         let btn2=document.querySelector("#edit")
+         btn2.onclick=()=>{
+         location.href="/posts/<%=post.id%>/edit";
+         console.log("btn clicked")
+}
        </script>
 </body>
 </html>
