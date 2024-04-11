@@ -16,12 +16,15 @@
                 <button id="edit">Edit</button>
             </h4>
         </div>
-       <script>
-         let btn2=document.querySelector("#edit")
-         btn2.onclick=()=>{
-         location.href="/posts/<%=post.id%>/edit";
-         console.log("btn clicked")
-}
-       </script>
+        <form action="/posts/<%=post.id%>?_method=DELETE" method="post">
+            <button>Delete</button>
+        </form>
+        <script>
+          let btn2=document.querySelector("#edit")
+          btn2.onclick=()=>{
+          location.href="/posts/<%=post.id%>/edit";
+          }
+          console.log("btn clicked");
+        </script>
 </body>
 </html>
