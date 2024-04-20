@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table,td,th{
+            border: 1px solid black;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+   <table>
+   <tr>
+    <th> ID</th>
+    <th> USERNAME</th>
+    <th> EMAIL</th>
+    <th>EDIT</th>
+   </tr>
+    <% for(user of users){ %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td> <form action="/user/<%=user.id%>/edit"><button>Edit user</button></form></td>
+        </tr>
+        <% } %>
+   </table>
+   <h3>New user? <button onclick="window.location.href='/user/new'">Sign up</button></h3> 
+</head>
+<body>
+    
+</body>
+</html>
