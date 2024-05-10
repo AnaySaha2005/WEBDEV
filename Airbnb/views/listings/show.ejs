@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust</title>
-</head>
+<% layout("./layouts/boilerplate.ejs")%>
 <body>
-    <h3>Listing Details</h3>
-    <ul>
-        <li><%=listing.title%></li>
-        <li><%=listing.description%></li>
-        <li><img src="<%=listing.image%>" alt=""></li>
-        <li> &#8377; <%=listing.price.toLocaleString("en-IN")%></li>
-        <li><%=listing.location%></li>
-        <li><%=listing.country%></li>
-        <%console.log(listing.price.toLocaleString(""))%>
-    </ul>
-   
+    <div class="row" >
+        <div class="col-8 offset-3"><h3>Listing Details</h3></div>
+        
+        <div class="col-6 offset-2" style="width: 70%;">
+            <img src="<%=listing.image%>" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text">
+                <%=listing.title%> <br>
+                <%=listing.description%> <br>
+                &#8377; <%=listing.price.toLocaleString("en-IN")%> <br>
+                <%=listing.location%> <br>
+                <%=listing.country%> <br>
+            </p>
+            </div>
+          </div>
+    </div>
+
+    <div class="box" style="display: flex; justify-content: center; margin-top: 5px;">
+        <form action="/listings/<%=listing._id%>/edit" method="get">
+            <button class="btn" style="background-color:#fe424d !important; border: none; color: wheat; margin-right: 50px;">Edit</button>
+        </form>
+        
+        <br><br>
+        <form action="/listings/<%=listing._id%>?_method=DELETE" method="post">
+         <button class="btn"  style="background-color:#fe424d !important; border: none; color: wheat;">Delete Listings</button>
+      
+    </div>
+  <br><br>
+</form>
 </body>
 </html>
