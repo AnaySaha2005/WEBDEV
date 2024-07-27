@@ -48,7 +48,7 @@ a{
 .f-info-links a:hover{
     text-decoration: underline;
 }
-.card{
+.listcard{
     border: none !important;
     margin-bottom: 2rem;
     margin-right: 1rem;
@@ -60,6 +60,6 @@ a{
 .card-text{
     font-weight: 500 !important;
 }
-.card:hover{
+.listcard:hover{
     box-shadow:6px 6px 2px 1px rgba(0, 0, 0, 0.194);
 }

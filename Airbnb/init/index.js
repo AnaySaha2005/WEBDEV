@@ -5,9 +5,13 @@ async function main() {
 }
 const initdata=require('./data.js');
 const Listing=require("../models/listing.js")
+const review=require("../models/review.js")
 Listing.deleteMany({}).then(()=>{
     console.log("data deleted")
 })
 Listing.insertMany(initdata.data).then(()=>{
     console.log("data added")
+})
+review.deleteMany({}).then(()=>{
+  console.log("data deleted")
 })

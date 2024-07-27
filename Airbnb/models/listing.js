@@ -1,4 +1,6 @@
+
 const mongoose = require('mongoose');
+
 const ListingSchema=mongoose.Schema({
     title:{
        type: String,
@@ -13,6 +15,12 @@ const ListingSchema=mongoose.Schema({
     price:String,
     location:String,
     country:String,
+    reviews:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Review",
+        }
+    ]
 })
 const Listing=mongoose.model("Listing",ListingSchema)
 module.exports=Listing;
