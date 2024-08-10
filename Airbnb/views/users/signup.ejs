@@ -1,0 +1,51 @@
+<% layout("./layouts/boilerplate.ejs")%>
+<style>
+        #typing {
+            font-size: 24px;
+            white-space: pre; /* Preserve whitespace */
+        }
+</style>
+<body>
+    <div class="row md-3">
+        <h5 class="col-6 offset-3" id="typing"></h1>
+        <div class="col-6 offset-3">
+            <form action="/signup" method="post"  class="needs-validation" >
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" placeholder="Enter Username" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" placeholder="eg : abc@yahoo.com" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" placeholder="Enter a strong Pasword" name="password" class="form-control" required>
+                </div>
+                <hr>
+                <button class="btn btn-dark col-6 offset-3" style="background-color:#fe424d !important; border: none;">Submit</button>
+                <br><br>
+            </form>
+            <p class="offset-3">Have an account ?<a href="/login" style="text-decoration: underline!important;">Login.</a></p>
+        </div>
+    </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const text = "Signup on wanderlust";
+    const typingElement = document.getElementById('typing');
+    let index = 0;
+    const speed = 100; // Adjust typing speed (milliseconds)
+
+    function typeWriter() {
+        if (index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
+});
+ </script>
+</body>
+</html>

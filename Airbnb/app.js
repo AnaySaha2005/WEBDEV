@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV!="production")
+require('dotenv').config()
+// console.log(process.env.CLOUD_NAME)
+
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -9,7 +13,12 @@ const ejsmate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const listingrouter = require("./routes/listing.js");
 const reviewrouter = require("./routes/review.js");
+const userrouter = require("./routes/user.js");
 const flash = require("connect-flash");
+const passport = require("passport");
+const localStrategy = require("passport-local");
+const user = require("./models/user.js");
+
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
@@ -37,19 +46,39 @@ async function main() {
 }
 
 app.listen(port, () => console.log(` app listening on port ${port}!`));
+//flash
 app.use(flash());
+//using session
+app.use(session(sessionOptions));
+//password
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(user.authenticate()));
+passport.serializeUser(user.serializeUser())
+passport.deserializeUser(user.deserializeUser())
+//using flash
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
+  res.locals.currUser=req.user;
   next();
 });
+
+
+
+
 app.use("/listings", listingrouter);
 app.use("/listings/:id/reviews", reviewrouter);
+app.use("/", userrouter);
 app.all("*", (req, res, next) => {
+ // 
   next(new ExpressError(404, "Page Not Found"));
 });
 app.use((err, req, res, next) => {
   let { statusCode, message } = err;
+  if(req.originalUrl!=="/favicon.ico"){
   console.log(err);
+  console.log(req.originalUrl);
+  }
   res.render("./listings/error.ejs");
 });

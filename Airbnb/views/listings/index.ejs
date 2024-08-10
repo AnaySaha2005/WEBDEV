@@ -1,4 +1,4 @@
-<%=success%> <%=error%>
+
 <style>
   img {
     height: 15rem;
@@ -13,7 +13,7 @@
     <%for(listing of allListings){%>
     <a href="/listings/<%=listing._id%>">
       <div class="listcard card col">
-        <img src="<%" ="listing.image%" /> class="card-img-top" >
+        <img src="<%=listing.image %>"  class="card-img-top">
         <div class="card-body">
           <p class="card-text">
             <b><%= listing.title %></b>
