@@ -9,12 +9,13 @@ const review=require("../models/review.js")
 const user = require('../models/user.js');
 Listing.deleteMany({}).then(()=>{
     console.log("data deleted")
-})
-initdata.data=initdata.data.map((obj)=>({...obj,owner:'66b6183211b63ee42449934f'}))
+    initdata.data=initdata.data.map((obj)=>({...obj,owner:'66b6183211b63ee42449934f'}))
 Listing.insertMany(initdata.data).then(()=>{
-
     console.log("data added")
+    review.deleteMany({}).then(()=>{
+      console.log("reviews deleted")
+    })
 })
-review.deleteMany({}).then(()=>{
-  console.log("reviews deleted")
 })
+
+

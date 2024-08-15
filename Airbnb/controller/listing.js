@@ -27,8 +27,11 @@ module.exports.index=async (req, res) => {
       });
   }
   module.exports.createListing=async function (req, res) {
+    let url=req.file.path;
+    let filename=req.file.filename;
     let listing = new Listing(req.body.listing);
     listing.owner = req.user._id;
+    listing.image={url,filename}
     let result = listingSchema.validate(req.body);
     //to print error
     if (result.error) {
@@ -43,11 +46,17 @@ module.exports.index=async (req, res) => {
   module.exports.editListing=async (req, res) => {
     let id = req.params.id;
     const listing = await Listing.findById(id);
+    console.log(listing.image.url)
     res.render("listings/edit.ejs", { listing });
   }
   module.exports.updateList=async (req, res) => {
     const id = req.params.id;
-    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+    let listing=await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+    let url=req.file.path;
+    let filename=req.file.filename;
+    if(typeof req.file!==undefined)
+    listing.image={url,filename}
+  await listing.save()
     res.redirect(`/listings/${id}`);
   }
   module.exports.destroy= async (req, res) => {

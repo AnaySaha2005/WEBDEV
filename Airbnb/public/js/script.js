@@ -20,10 +20,10 @@
   navbaricon.addEventListener("click",()=>{
     navbar=document.querySelector(".navbar");
     if(navbaricon.className==="navbar-toggler"){
-    navbar.style.height="8rem";
+    navbar.style.height="16rem";
     console.dir(navbaricon.className==="navbar-toggler");
     }
    else navbar.style.height="4rem";
-    navbar.style.transitionDuration="1s"
+    navbar.style.transitionDuration="1.8s"
    
   })

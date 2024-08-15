@@ -1,13 +1,13 @@
 if(process.env.NODE_ENV!="production")
 require('dotenv').config()
-// console.log(process.env.CLOUD_NAME)
 
 const express = require("express");
 const app = express();
 const port = 8080;
 const mongoose = require("mongoose");
 const path = require("path");
-const session = require("express-session");
+const session = require("express-session"); 
+const MongoStore = require('connect-mongo');
 const methodOverride = require("method-override");
 const ejsmate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
@@ -18,7 +18,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
 const user = require("./models/user.js");
-
+const dburl=process.env.ATLASDB_URL;
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
@@ -27,7 +27,21 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.engine("ejs", ejsmate);
 
+
+const store=MongoStore.create({
+  mongoUrl:dburl,
+  crypto:{
+    secret: "mysecret",
+  },
+  touchAfter:24*60*60,
+})
+
+store.on("error",()=>{
+  console.log("error in mogo session store",err)
+})
+
 const sessionOptions = {
+  store,
   secret: "mysecret",
   resave: false,
   saveUninitialized: true,
@@ -37,12 +51,14 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
-app.use(session(sessionOptions));
 
+
+
+app.use(session(sessionOptions));
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+  await mongoose.connect(dburl);
 }
 
 app.listen(port, () => console.log(` app listening on port ${port}!`));
@@ -70,8 +86,8 @@ app.use((req, res, next) => {
 app.use("/listings", listingrouter);
 app.use("/listings/:id/reviews", reviewrouter);
 app.use("/", userrouter);
+
 app.all("*", (req, res, next) => {
- // 
   next(new ExpressError(404, "Page Not Found"));
 });
 app.use((err, req, res, next) => {
