@@ -1,8 +1,9 @@
 body{
     font-family: "Plus jakarta Sans",san-serif !important;
-    background-color: #d5d5d5d2;
+    background-color: #dcdcdcd2;
     display: flex;
     flex-direction: column;
+    font-size: 1rem;
 }
 .container{
   flex: 1;
@@ -12,6 +13,19 @@ body{
     border-bottom: 1px solid rgb(160, 160, 160) ;
     background-color: white;
 }
+.btn-search{
+   background-color:#fe424d ;
+   color: white;
+   border-radius: 50px;
+}
+.btn-search:hover{
+    background-color:#fe424d ;
+    color: white;
+ }
+.btn-search i{
+     display: inline;
+     margin-right: 0.5rem;
+ }
 .fa-compass{
     color:#fe424d ;
     font-size: 2rem;
@@ -55,11 +69,19 @@ a{
     transition-duration: 0.5s;
 }
 .card-img-top{
-    border-radius: 1rem;
+    border-radius: 0.95rem;
 }
 .card-text{
     font-weight: 500 !important;
 }
 .listcard:hover{
     box-shadow:6px 6px 2px 1px rgba(0, 0, 0, 0.194);
+}
+#airhome{
+    border-radius: 30px;
+    transition-duration: 0.3s;
+}
+#airhome:hover{
+    border-radius: 30px;
+    background-color: rgb(193, 193, 193);
 }
