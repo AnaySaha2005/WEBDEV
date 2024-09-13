@@ -1,0 +1,11 @@
+.ProductTab{
+    border: 1px solid white;
+    width: 500px;
+    transition-duration: 0.5s;
+    border-radius: 50px;
+    margin: 2rem 2rem ;
+   
+}
+.ProductTab:hover{
+    box-shadow: 2px 5px 10px 1px rgb(154, 154, 154);
+}
