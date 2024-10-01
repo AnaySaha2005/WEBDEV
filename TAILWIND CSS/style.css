@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.box {
+  @apply m-4 text-center h-16 w-11/12 bg-lime-400 border-2 rounded-lg border-black;
+}
