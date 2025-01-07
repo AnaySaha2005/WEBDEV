@@ -10,7 +10,7 @@ export default async function Page({
   };
 }) {
   const { slug } = await params;//to remove async error
-
+ 
   return (
     <>
       <div>{slug}</div>
